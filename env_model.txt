@@ -1,0 +1,5 @@
+PG_USER=username
+PG_PASSWORD=pg_password
+PG_HOST=localhost
+PG_PORT=5432
+PG_DATABASE=DBTask
