@@ -146,7 +146,10 @@ dropuser -U username username
 
 ## List only the column names
 ```bash
-SELECT column_name FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'Name_of_the_table';
+SELECT column_name 
+FROM information_schema.columns 
+WHERE table_schema = 'public' 
+AND table_name = 'Name_of_the_table';
 ```
 
 ## List all rows
