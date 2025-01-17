@@ -19,6 +19,7 @@ public class TaskContext : DbContext
 
             category.Property(c => c.Name).IsRequired().HasMaxLength(150);
             category.Property(c => c.Description);
+            category.Property(c => c.Level);
         });
 
         modelBuilder.Entity<ToDoTask>(task =>

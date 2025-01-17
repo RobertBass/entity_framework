@@ -8,7 +8,6 @@ public class ToDoTask
     public Priority TaskPriority { get; set; }
     public DateTime CreatedDate { get; set; }
     public virtual Category? Category { get; set; }
-    //[NotMapped]
     public string Resumen { get; set; } = "";
 
 }
