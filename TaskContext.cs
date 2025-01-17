@@ -14,11 +14,24 @@ public class TaskContext : DbContext
     {
         modelBuilder.Entity<Category>(category => 
         {
-            category.ToTable("Category");
+            category.ToTable("Categories");
             category.HasKey(c => c.CategoryId);
 
             category.Property(c => c.Name).IsRequired().HasMaxLength(150);
             category.Property(c => c.Description);
+        });
+
+        modelBuilder.Entity<ToDoTask>(task =>
+        {
+            task.ToTable("Tasks");
+            task.HasKey(t => t.TaskId);
+            task.HasOne(t => t.Category).WithMany(c => c.Tasks).HasForeignKey(c => c.CategoryId);
+
+            task.Property(t => t.Title).IsRequired().HasMaxLength(200);
+            task.Property(t => t.Description);
+            task.Property(t => t.TaskPriority);
+            task.Property(t => t.CreatedDate);
+            task.Ignore(t => t.Resumen);
         });
     }
 
